@@ -1,0 +1,59 @@
+<dom-module id="nice-card">
+    <template>
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+            .container-card{
+                position: relative;
+                width: 200px;
+                height: 200px;
+                float: left;
+                padding: 1px;
+                margin:50px;
+            }
+            .container-card:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: aqua;
+                border-radius: 50%;
+                opacity: .5;
+            }
+            .container-card img{
+                border-radius: 50%;
+                width: 100%;
+            }
+            .container-card label.name{
+                text-transform: capitalize;
+                font-family: 'Open Sans', sans-serif;
+                position: absolute;
+                color: #E91E63;
+                top:75px;
+                width: 100%;
+                height: 50px;
+                text-align: center;
+                font-size: 30px;
+                text-shadow: 1px 1px 1px grey;
+            }
+        </style>
+        <div class="container-card">
+            <img src="{{image}}">
+            <label class="name">{{username}}</label>
+        </div>
+    </template>
+    <script>
+    Polymer({
+        is:'nice-card',
+        properties:{
+            name:String,
+            username:String
+            
+        },
+        ready : function(){
+            console.log('nice-card is ready...')
+        }
+    });    
+    </script>
+</dom-module>
